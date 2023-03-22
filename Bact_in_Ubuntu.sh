@@ -1,6 +1,6 @@
 while true
 do
-    read -p "Bact In Ubuntu 1.0 #" COMMAND
+    read -p "Bact In Ubuntu 1.0 : " COMMAND
     
     if [ $COMMAND = exits ]; then
         exit
