@@ -5,9 +5,16 @@ do
     if [ $COMMAND = exits ]; then
         exit
     elif [ $COMMAND = ubact_derivation1 ]; then
-        wget "https://raw.githubusercontent.com/Gadai-iiyokoiyo/Bact-in-Bash/OD1/Bact.sh" -O "Bact.sh"
+        wget "https://raw.githubusercontent.com/Gadai-iiyokoiyo/Bact-in-Bash/OD1/Bact.sh" -o "Bact.sh"
     elif [ $COMMAND = ubact_main ]; then
-        wget "https://raw.githubusercontent.com/Gadai-iiyokoiyo/Bact-in-Bash/main/Bact_in_Ubuntu.sh" -O "Bact.sh"
+        wget "https://raw.githubusercontent.com/Gadai-iiyokoiyo/Bact-in-Bash/main/Bact.sh" -o "Bact.sh"
+    elif [ $COMMAND = ubact_derivation_other ]; then
+        read -p "derivation_name:" $nm
+        wget "https://raw.githubusercontent.com/Gadai-iiyokoiyo/Bact-in-Bash/$nm/Bact.sh" -o "Bact.sh"
+    elif [ $COMMAND = pget ]; then
+        read -p "url:" $nm
+        wget "$nm"
+    
     fi
 
 done
