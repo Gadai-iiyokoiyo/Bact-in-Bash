@@ -12,9 +12,9 @@ do
         read -p "derivation_name:" nm
         wget "https://raw.githubusercontent.com/Gadai-iiyokoiyo/Bact-in-Bash/$nm/Bact.sh" -O "Bact.sh"
     elif [ $COMMAND = pget ]; then
-        read -p "url:" $nm
+        read -p "url:" nm
         wget "$nm"
-    
+    elif [ $COMMAND = gadaiengine ]; then
+        wget "https://github.com/Gadai-iiyokoiyo/Bact-in-Bash/blob/OD1/model%20(1).pt?raw=true" -O "GadaiEngineModel.pt" #It's a Pytorch model(GadaiEngine.pt)
     fi
-
 done
