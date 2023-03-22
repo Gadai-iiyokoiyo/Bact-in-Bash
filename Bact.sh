@@ -14,7 +14,15 @@ do
     elif [ $COMMAND = pget ]; then
         read -p "url:" nm
         wget "$nm"
-    elif [ $COMMAND = gadaiengine ]; then
-        wget "https://github.com/Gadai-iiyokoiyo/Bact-in-Bash/blob/OD1/model%20(1).pt?raw=true" -O "GadaiEngineModel.pt" #It's a Pytorch model(GadaiEngine.pt)
-    fi
+    elif [ $COMMAND = bactpkg ]; then
+        read -p "pkg name:" nm
+        wget "https://raw.githubusercontent.com/Gadai-iiyokoiyo/BactPkg/$nm/pkgsetup.sh" -O "$nm/pkgsetup.sh"
+        if [ ! -d $nm ]; then
+            mkdir $nm
+        fi
+        sh "$nm/pkgsetup.sh"
+    elif [ $COMMAND = com ]; then
+        read -p "Com    : " pkn
+        $pkn
+    fi  
 done
